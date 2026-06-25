@@ -19,11 +19,58 @@ body {
   margin: 0 auto;
   padding: 1em;
 }
+/* ── 页面布局：TOC 侧边栏 + 主内容 ── */
+.page-layout {
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+/* ── 目录侧边栏 ── */
+#toc {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 1em;
+  background: #fff;
+  border: 1px solid #a7d7f9;
+  padding: .8em .6em;
+  font-size: .85em;
+  line-height: 1.6;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+#toc .toc-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: .5em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid #ccc;
+  font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+}
+#toc .toc-label {
+  font-size: .8em;
+  color: #666;
+  display: block;
+}
+#toc ol { list-style: none; padding-left: 0; margin: 0; }
+#toc li { margin: .15em 0; }
+#toc li.toc-h2 { font-weight: 600; }
+#toc li.toc-h3 { padding-left: 1.2em; font-size: .95em; }
+#toc a { color: #0645ad; text-decoration: none; display: block; padding: .1em .3em; border-radius: 2px; }
+#toc a:hover { text-decoration: underline; background: #f5faff; }
+@media (max-width: 768px) {
+  .page-layout { flex-direction: column; }
+  #toc { width: 100%; position: static; font-size: .9em; }
+  #toc ol { display: flex; flex-wrap: wrap; gap: .3em .8em; }
+  #toc li.toc-h3 { padding-left: 0; }
+  #toc li.toc-h3::before { content: "· "; }
+}
 #content {
   background: #fff;
   border: 1px solid #a7d7f9;
   padding: 1.5em 2em;
   box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  flex: 1;
+  min-width: 0;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
@@ -311,6 +358,34 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 </head>
 <body>
 <div class="page-wrapper">
+<div class="page-layout">
+
+<nav id="toc">
+  <div class="toc-title">目录</div>
+  <ol>
+    <li class="toc-h2"><a href="#烈鸟比百">烈鸟比百</a></li>
+    <li class="toc-h3"><a href="#初见端倪">初见端倪</a></li>
+    <li class="toc-h3"><a href="#超级拼装">超级拼装</a></li>
+    <li class="toc-h3"><a href="#朴昌大神">朴昌大神</a></li>
+    <li class="toc-h3"><a href="#百万撤离">百万撤离</a></li>
+    <li class="toc-h3"><a href="#高雅创作">高雅创作</a></li>
+    <li class="toc-h2"><a href="#六班的老六">六班的老六</a></li>
+    <li class="toc-h3"><a href="#键政领域大神">键政领域大神</a></li>
+    <li class="toc-h3"><a href="#组建CORE">组建CORE</a></li>
+    <li class="toc-h2"><a href="#饮水机公司">天津慧众普康科技发展有限公司</a></li>
+    <li class="toc-h3"><a href="#饮水机公司入场">饮水机公司入场</a></li>
+    <li class="toc-h3"><a href="#真人快打">真人快打</a></li>
+    <li class="toc-h2"><a href="#嗯嗯owo">嗯嗯owo</a></li>
+    <li class="toc-h3"><a href="#嗯嗯owo和被他拎出来挡枪的家人">嗯嗯owo和被他拎出来挡枪的家人</a></li>
+    <li class="toc-h3"><a href="#嗯嗯owo爱打工">嗯嗯owo爱打工</a></li>
+    <li class="toc-h3"><a href="#嗯嗯owo的老家瑞昌市">嗯嗯owo的老家瑞昌市</a></li>
+    <li class="toc-h2"><a href="#附录">附录</a></li>
+    <li class="toc-h3"><a href="#雅文共赏">雅文共赏</a></li>
+    <li class="toc-h3"><a href="#鸟氏硬度">鸟氏硬度</a></li>
+    <li class="toc-h2"><a href="#注释和外部链接">注释和外部链接</a></li>
+  </ol>
+</nav>
+
 <div id="content">
 
 <!-- ==================== 页面顶部模板 ==================== -->
@@ -504,17 +579,12 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 <tr><th>硬度</th><td>∞</td></tr>
 <tr><th>所属</th><td>CORE</td></tr>
 </table>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<p>占位</p>
-<!-- 占位行 -->
-<div style="height:12em;"></div>
+<h3 id="键政领域大神">键政领域大神</h3>
+<p>据查，<strong>六班的老六</strong>曾混迹于各大左翼键政交流群，其堪比波尔布特的维稳水平和堪比希特勒的诉求令友邦惊诧。此人在简中互联网键政圈如区一般的的声誉并未阻止他对（自认为是）左翼运动的热爱。据不可靠消息来源称，此人作为加麻大瘤子疑似曾因在外网发表极端政治言论遭到了当地的执法机关审查。<sup class="footnote">[需要更多信息]</sup></p>
+
+<h3 id="组建CORE">组建CORE</h3>
+<p>洪武六五九年三月廿五日午时，因太史公哔哩哔哩弹幕网@Resgew科普不慎，导致六班的老六大脑升级时驱动受损。此人一转红温，开始在各大模型作者下方进行超级嘲讽。然而如此路边一条的行为自然为人所不齿。不久后，老六疑似被某流浪狗收容所强制收容，进行赛博绝育后被放归网际网络。挂上狗牌的老六于旧历丙午年三月三十日左右急速组建CORE。因其管理能力过于奇妙深刻，遂又找来另一个同等级的神人<strong>Lead Alloy</strong>（下称<strong>铅块</strong>）对成员进行联合独裁统治。其使用不知从何而来的野生YSM模型进行超级开源行动，收获大批低脂脑残粉。此外还在群内上演堪比钟离假死的顶级智斗——赛博二人转。MurthiNext认为这无疑是可笑的，CORE这种行为只能显得他们两人完全不懂得组织架构建设，解散更是迟早的事。</p>
+<p>好消息是，两人因过于奇葩搞笑的举动引发了来自超级软蛋、哔哩哔哩弹幕网@大佬萌茶的鄙视。后者因被害妄想症发作，幻想CORE想对其进行二次迫害，并秉持先下手为强的理念，透过<em>神秘手段</em>找到了一些<em>高雅人士</em>对老六和铅块发动<em>混响打击</em>。喔不不不，这无疑是可笑的。</p>
 
 <!-- ==================== 天津慧众普康科技发展有限公司 ==================== -->
 
@@ -939,6 +1009,7 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 </div>
 
 </div><!-- /#content -->
+</div><!-- /.page-layout -->
 <div class="site-footer">
   由 MediaWiki 语法自动转换 · 部署于 GitHub Pages
 </div>

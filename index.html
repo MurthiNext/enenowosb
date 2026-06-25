@@ -68,7 +68,6 @@ pre code { background: none; padding: 0; }
   border-radius: 4px;
   font-size: .9em;
 }
-.tpl-disclaimer { background: #fef6e7; border: 1px solid #f0c674; }
 .tpl-disambig { background: #f5faff; border: 1px solid #a7d7f9; }
 .tpl-content-warning { background: #fff0f0; border: 2px solid #e33; color: #800; font-weight: bold; text-align: center; }
 .tpl-incomplete { background: #fff8dc; border: 1px dashed #cba; text-align: center; color: #666; }
@@ -104,6 +103,14 @@ details.hide-box summary {
 }
 details.hide-box summary:hover { background: #e4e4e4; }
 details.hide-box .hide-body { padding: .6em .8em; }
+
+/* ── 黑幕（遮罩文字） ── */
+.censor { background: #222; color: #222; padding: .05em .2em; transition: color .15s; }
+.censor:hover { color: #eee; }
+
+/* ── 需要验证标记 ── */
+.needs-verify { text-decoration: underline; text-decoration-style: wavy; text-decoration-color: #f90; text-underline-offset: 4px; }
+.needs-verify::after { content: "[需验证]"; font-size: .7em; vertical-align: super; color: #f90; margin-left: 1px; }
 
 /* ── 页面标题横幅 ── */
 .page-title-banner {
@@ -188,16 +195,14 @@ table.wikitable th { background: #5c5c5c; font-weight: bold; }
 
 /* ── Gallery ── */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5em;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75em;
   margin: 1em 0;
 }
 .gallery figure {
-  flex: 0 0 auto;
-  max-width: 300px;
   text-align: center;
+  margin: 0;
 }
 .gallery figure img { display: block; width: 100%; }
 .gallery figure figcaption {
@@ -205,6 +210,12 @@ table.wikitable th { background: #5c5c5c; font-weight: bold; }
   color: #555;
   padding: .2em;
   font-style: italic;
+}
+@media (max-width: 640px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .gallery { grid-template-columns: 1fr; }
 }
 
 /* ── 图片样式 ── */
@@ -304,10 +315,6 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 
 <!-- ==================== 页面顶部模板 ==================== -->
 
-<div class="tpl tpl-disclaimer">
-  ⚠️ <a href="https://nmfwiki.miraheze.org/wiki/NMFWiki:%E9%A6%96%E9%A1%B5">NMFWiki 严禁任何形式的恶俗行为</a>，也与任何恶俗站点无任何关系。
-</div>
-
 <div class="tpl tpl-disambig">
   🤔 本次事件中部分<em>晚期智人类似物</em>的申必行为 — 主条目：<a href="https://nmfwiki.miraheze.org/wiki/YSM%E5%BC%80%E6%BA%90%E4%BA%8B%E4%BB%B6">YSM开源事件</a>
 </div>
@@ -334,7 +341,7 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
   <strong>欢迎来到 Yes Steve Model 开源事件冥壬堂！</strong>
 </div>
 
-<p><strong>YSM开源事件/冥壬堂</strong>专注于收集 <a href="#">YSM开源事件</a>中各路人马的奇异搞笑申必事迹，并用类似于<em>高雅人士</em>的口吻娓娓道来，以此让各位一般通过路人看清 YSM 社区内某些<strong>晚期智人类似物</strong>的真实面目。</p>
+<p><strong>YSM开源事件/冥壬堂</strong>专注于收集 <a class="ext-link" href="https://nmfwiki.miraheze.org/wiki/YSM%E5%BC%80%E6%BA%90%E4%BA%8B%E4%BB%B6">YSM开源事件</a>中各路人马的奇异搞笑申必事迹，并用类似于<em>高雅人士</em>的口吻娓娓道来，以此让各位一般通过路人看清 YSM 社区内某些<strong>晚期智人类似物</strong>的真实面目。</p>
 
 <!-- ==================== 烈鸟比百 ==================== -->
 
@@ -497,7 +504,15 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 <tr><th>硬度</th><td>∞</td></tr>
 <tr><th>所属</th><td>CORE</td></tr>
 </table>
-
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
+<p>占位</p>
 <!-- 占位行 -->
 <div style="height:12em;"></div>
 
@@ -528,11 +543,45 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 <tr><th>所属</th><td>神秘势力</td></tr>
 </table>
 
-<h3 id="申必行为">申必行为</h3>
-<p>参见 <a href="https://nmfwiki.miraheze.org/wiki/YSM%E5%BC%80%E6%BA%90%E4%BA%8B%E4%BB%B6#%E9%A5%AE%E6%B0%B4%E6%9C%BA%E5%85%AC%E5%8F%B8%E5%85%A5%E5%9C%BA">YSM开源事件#饮水机公司入场</a>。</p>
-<div class="info-box">
-  <div class="info-text">📎 已嵌入章节：YSM开源事件 § 饮水机公司入场（内容请参见主页面）</div>
+<h3 id="饮水机公司入场">饮水机公司入场</h3>
+<p>继 OpenYSM 发布后不久，<strong>天津惠众普康科技发展有限公司</strong>（以下简称<strong>饮水机公司</strong>）于5月10日下午加入混战。其几乎 24 小时一刻不停地举报下架 Bilibili 平台上任何涉及 YSMParser 与 OpenYSM 的视频（包括中立的杂谈类视频）<sup class="footnote"><a href="#fn-6">[6]</a></sup>，原因均为"侵犯我司软件著作权"<span class="censor">（拥有 YSM 模组著作权的饮水机公司）</span>该公司<span class="censor"><em>理论上</em></span>拥有饮水设备相关产业，并且公司在爱企查上注册的商标为某饮水机的Logo，故得名「饮水机公司」。</p>
+
+<h4 id="关于饮水机公司">关于饮水机公司</h4>
+<p>天津惠众普康科技发展有限公司为一家注册日期2009年03月19日的公司，法人龙云章（失信且限制高消费），注册资本30万人民币（<span class="needs-verify">实缴0.001万人民币</span><sup class="footnote"><a href="#fn-7">[7]</a></sup>），并且有大量的信誉风险和官司，于2024年突然大范围改变主营业务<sup class="footnote"><a href="#fn-8">[8]</a></sup>——这种种原因使社区认为该公司系所谓"皮包公司"，是灰产的手套，负责代举报相关业务。</p>
+<p>后续，该公司被发现为YSM模组在Minecraft(中国)基岩版的代理。</p>
+
+<h4 id="DMCA">DMCA</h4>
+<p>饮水机公司在6月3日发表了一篇<a class="ext-link" href="https://github.com/github/dmca/blob/master/2026/06/2026-06-03-ysm.md">声明</a>到Github，主张自己为YSM项目的版权持有者，要求GitHub下架OpenYSM的源代码。英文原文可在上文链接查看，简中译文见下方展开：</p>
+
+<details class="hide-box">
+<summary>声明（简体中文译文）</summary>
+<div class="hide-body">
+<p>我们对 Yes Steve Model（YSM）模组软件拥有专属的合法版权所有权。天津惠众普康科技发展有限公司与 YSM 所有原始创作者拥有包括版权保护、侵权监督、平台投诉提交及法律索赔权在内的全部法律权利，完全有资格采取一切合法行动以维护知识产权利益。我们的官方项目仓库托管于 [private]。</p>
+<p>受版权保护的作品是 Yes Steve Model（YSM），一款为 Minecraft 独立开发的自定义角色模型修改程序。</p>
+<p>该模组基于 Forge 框架构建，具备自主研发的玩家模型替换、独立动画控制及高性能渲染系统。它采用自主设计的加密文件格式、专属代码逻辑、原创模型资源及定制渲染算法。所涉及的受版权保护版本为 YSM 2.6.5 Forge，涵盖由我们团队独立研发的原始程序源代码、核心运行逻辑、本地加速库、原创角色模型文件、动画数据及专属技术方案。上述所有内容均受版权法保护，未经授权不得复制、逆向工程、修改及公开分发。</p>
+<p>我们实施了多层技术保护措施（TPMs）来保护我们受版权保护的 Yes Steve Model（YSM）软件、其源代码、本地库、渲染逻辑及加密模型资源。这些措施包括：</p>
+<ul>
+  <li>对核心 DLL/SO 文件采用原生 C++ DRM 与 VMProtect 虚拟化保护，防止静态分析及直接反编译。</li>
+  <li>自定义加密管线，结合了改进版 CityHash64、链式 XChaCha20、MT19937 流密码 XOR 及混淆的 Zstandard 压缩。</li>
+  <li>专属的 .ysm 加密格式，具有链式解密逻辑、完整性校验，以及抹除原始模型工程信息的预渲染几何数据。</li>
+  <li>代码混淆（ProGuard、名称重整）及反调试机制，以阻止逆向工程尝试。</li>
+</ul>
+<p>这些措施共同防止对我们受版权保护的代码及资源进行未经授权的访问、解密、提取及修改，确保只有官方 YSM 客户端才能合法加载并渲染受保护的内容。</p>
+<p>被指控的仓库 OpenYSMDev/OpenYSM 明确地被设计用于完全绕过并规避我们所有的技术保护措施，正如其自身技术报告所记录的那样：</p>
+<ul>
+  <li>它对我们受 VMProtect 保护的本地 DLL 进行了深度逆向工程，使用动态调试、IDA 分析及 JNI 挂钩来绕过反调试与虚拟化保护。</li>
+  <li>它通过自定义重映射工具及 LLM 辅助重命名，对我们混淆过的 Java 代码进行了反混淆和反编译，并恢复了原始符号名称。</li>
+  <li>它完全破解了我们的自定义加密系统，包括改进版 CityHash64、XChaCha20 链、MT19937 XOR 及混淆的 Zstandard，从而实现对 .ysm 文件的完全解密。</li>
+  <li>它将我们的核心渲染及模型加载逻辑（Java 与本地两部分）重构并重新实现为一个新的开源项目，直接派生自我们受版权保护的 YSM 2.6.5 Forge 代码库。</li>
+  <li>它提取并复用了我们受保护的模型几何数据、动画数据及渲染算法，实际上剥离了我们的 DRM，以创建一个免费、开源的替代品。</li>
+</ul>
+<p>该项目所声明的目标是创建一个完全开源的 YSM 替代品，而这一目标若不系统性地规避我们所有的版权与技术保护便无法实现。</p>
+<p><em>备注：[private]为GitHub擦除的敏感信息</em></p>
+<p><em>备注：其精确的知道一个有效的YSM源码链接，YSM使用的技术，YSM使用的保护，部分观点认为这佐证了饮水机公司和YSM的关联，但是暂时没有明确证据。</em></p>
 </div>
+</details>
+
+<p>GitHub在收到投诉之后下架了OpenYSM的源码，并导致OpenYSM的开发者的GitHub账号被封禁。但是源码已经被OpenYSM支持者迅速备份到了其他Git平台，暂时没有其他平台收到来自饮水机公司的投诉。</p>
 
 <h3 id="真人快打">真人快打</h3>
 <p>2026 年 6 月 21 日下午，某高雅人士自发前往<strong>慧众普康本社</strong>，试图找到法人龙云章先生<sup class="footnote"><a href="#fn-1">[1]</a></sup>并进行线下互动。然而，当高雅人士来到慧众普康本社所在地时，发现此处为一小区内的居民楼，并无任何饮水机公司相关线索。通过对周围环境和生活痕迹的判断，高雅人士们很遗憾地表示，所谓的天津慧众普康科技发展有限公司疑似只是一个设立在某居住用地上的某房产内的卫生间。</p>
@@ -555,8 +604,6 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
 <!-- ==================== 嗯嗯owo ==================== -->
 
 <h2 id="嗯嗯owo">嗯嗯owo</h2>
-
-<div class="tpl tpl-disambig">NMFWiki 不负责以下内容的真实性。</div>
 
 <table class="messagebox mbox-green">
 <tr>
@@ -877,6 +924,9 @@ figure.thumb-right { float: right; margin: 0 0 .4em .8em; }
   <li id="fn-3"><a href="#fn-3">↑</a> 比如 <a class="ext-link" href="https://web.archive.org/web/20260619155840/https://www.bilibili.com/opus/1190357582040006691">Bilibili 存档 - 嗯嗯owo的部分模型展示</a></li>
   <li id="fn-4"><a href="#fn-4">↑</a> ESRB 分级中适用于 10 岁以上（E10+）的儿童的游戏</li>
   <li id="fn-5"><a href="#fn-5">↑</a> 对 COVID-19（新型冠状病毒肺炎）的代称</li>
+  <li id="fn-6"><a href="#fn-6">↑</a> 比如 <a class="ext-link" href="https://www.bilibili.com/video/BV1bNLA6hEho">Bilibili 视频 BV1bNLA6hEho</a></li>
+  <li id="fn-7"><a href="#fn-7">↑</a> 一说饮水机公司已"申报"完成了30万的实缴</li>
+  <li id="fn-8"><a href="#fn-8">↑</a> <a class="ext-link" href="https://aiqicha.baidu.com/company_detail_30456083154819">爱企查 - 天津惠众普康科技发展有限公司</a></li>
 </ol>
 </div>
 
